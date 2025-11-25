@@ -27,8 +27,9 @@
   <header class="header">
     <div class="container">
       <div class="logo">
-        <p>ГурманЪ</p>
-        <p>Добро пожаловать !</p>
+        <img class="logo" src="img/logo.png" alt="">
+        <!-- <p>ГурманЪ</p>
+        <p>Добро пожаловать !</p> -->
       </div>
       <ul class="menu-list">
         <!-- <li class="menu-list__item">
@@ -60,12 +61,35 @@
   </header>
 
   <main class="main">
-    <div class="container">
-      <div class="main-fon">
-        <img class="main-fon__img" src="img/header-fon.jpg" alt="">
-        <p class="main-fon__title">ГурманЪ</p>
+    <div class="main-fon">
+        <ul class="main-fon-list">
+          <li class="main-fon-item">
+            <img class="main-fon__img" src="img/header-fon.jpg" alt="">
+            <p class="main-fon__title">ГурманЪ</p>
+            <p class="main-fon__text">Добро пожаловать в наше атмосферное и гостеприимное заведение !</p>
+          </li>
+          <li class="main-fon-item">
+            <img class="main-fon__img" src="img/shaurma.jfif" alt="">
+            <p class="main-fon__title">Шаурма</p>
+            <p class="main-fon__text">Самое популярное блюдо полюбившееся многим</p>
+          </li>
+          <li class="main-fon-item">
+            <img class="main-fon__img" src="img/lulya.png" alt="">
+            <p class="main-fon__title">Люля-кебаб</p>
+            <p class="main-fon__text">Приходи и попробуй люля из свежей говядины</p>
+          </li>
+          <li class="main-fon-item">
+            <img class="main-fon__img" src="img/gribi.jpeg" alt="">
+            <p class="main-fon__title">Грибы</p>
+            <p class="main-fon__text">Гастрономическая бомба подаётся с сырным соусом</p>
+          </li>
+        </ul>
+        <div class="arrows">
+          <div class="arrow-left">лево</div>
+          <div class="arrow-right">право</div>
+        </div>
       </div>
-
+    <div class="container">
       <ul class="food-list">
         <!-- шаурма -->
         <li class="food-list__item" id="shaurma">
@@ -456,44 +480,85 @@
   </main>
 
   <script>
+
+    const menuListItems = document.querySelectorAll('.menu-list__item')
+    menuListItems.forEach(item => {
+      item.addEventListener('click', () => {
+        menuListItems.forEach(itemAll => {
+          if(itemAll.classList.contains('menu-list__item-red')) {
+            itemAll.classList.remove('menu-list__item-red')
+          }
+        })
+        !item.classList.contains('menu-list__item-red') ? item.classList.add('menu-list__item-red') : ''
+      })
+    })
+
+    // slider
+    const arrowLeft = document.querySelector('.arrow-left')
+    const arrowRight = document.querySelector('.arrow-right')
+
+    const sliderUl = document.querySelector('.main-fon-list')
+    const sliderList = document.querySelectorAll('.main-fon-item')
+    let countSlide = 0;
+    arrowLeft.addEventListener('click', () => {
+      if(countSlide == 0) {
+        countSlide = 3
+        sliderUl.style.transform = `translate(-${countSlide}00%)`
+      } else {
+        countSlide -= 1
+        sliderUl.style.transform = `translate(-${countSlide}00%)`
+      }
+    })
+
+    arrowRight.addEventListener('click', () => {
+      if(countSlide == sliderList.length - 1) {
+        countSlide = 0
+        sliderUl.style.transform = `translate(0%)`
+      } else {
+        countSlide += 1
+        sliderUl.style.transform = `translate(-${countSlide}00%)`
+      }
+    })
+
+    // прокрутка меню
     document.addEventListener('DOMContentLoaded', () => {
-    // Получаем ссылку на фиксированное меню
-    const fixedMenu = document.querySelector('.header');
-    // Определяем высоту меню. Если меню не найдено, используем 0.
-    const menuHeight = fixedMenu ? fixedMenu.offsetHeight : 0;
-    // Желаемый отступ от верха меню до прокручиваемого элемента
-    const scrollOffset = 20; // Например, 20 пикселей
+      // Получаем ссылку на фиксированное меню
+      const fixedMenu = document.querySelector('.header');
+      // Определяем высоту меню. Если меню не найдено, используем 0.
+      const menuHeight = fixedMenu ? fixedMenu.offsetHeight : 0;
+      // Желаемый отступ от верха меню до прокручиваемого элемента
+      const scrollOffset = 20; // Например, 20 пикселей
 
-    // Находим все якорные ссылки, которые начинаются с '#'
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+      // Находим все якорные ссылки, которые начинаются с '#'
+      const anchorLinks = document.querySelectorAll('a[href^="#"]');
 
-    anchorLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            // Отменяем стандартное поведение браузера
-            event.preventDefault();
+      anchorLinks.forEach(link => {
+          link.addEventListener('click', (event) => {
+              // Отменяем стандартное поведение браузера
+              event.preventDefault();
 
-            // Получаем ID целевого элемента из атрибута href
-            const targetId = link.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+              // Получаем ID целевого элемента из атрибута href
+              const targetId = link.getAttribute('href');
+              const targetElement = document.querySelector(targetId);
 
-            if (targetElement) {
-                // Получаем текущую позицию прокрутки
-                const currentScrollPosition = window.scrollY || window.pageYOffset;
-                // Получаем позицию верхнего края целевого элемента относительно документа
-                const targetPosition = targetElement.getBoundingClientRect().top + currentScrollPosition;
+              if (targetElement) {
+                  // Получаем текущую позицию прокрутки
+                  const currentScrollPosition = window.scrollY || window.pageYOffset;
+                  // Получаем позицию верхнего края целевого элемента относительно документа
+                  const targetPosition = targetElement.getBoundingClientRect().top + currentScrollPosition;
 
-                // Вычисляем новую позицию прокрутки с учетом меню и отступа
-                const newScrollPosition = targetPosition - menuHeight - scrollOffset;
+                  // Вычисляем новую позицию прокрутки с учетом меню и отступа
+                  const newScrollPosition = targetPosition - menuHeight - scrollOffset;
 
-                // Плавно прокручиваем страницу
-                window.scrollTo({
-                    top: newScrollPosition,
-                    behavior: 'smooth' // 'smooth' для плавной прокрутки
-                });
-            }
-        });
-    });
-});
+                  // Плавно прокручиваем страницу
+                  window.scrollTo({
+                      top: newScrollPosition,
+                      behavior: 'smooth' // 'smooth' для плавной прокрутки
+                  });
+              }
+          });
+      });
+  });
   </script>
 </body>
 </html>
