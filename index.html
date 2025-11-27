@@ -88,6 +88,9 @@
           <div class="arrow-left">лево</div>
           <div class="arrow-right">право</div>
         </div>
+        <div class="rounds">
+          
+        </div>
       </div>
     <div class="container">
       <ul class="food-list">
@@ -482,9 +485,10 @@
   <script>
 
     const menuListItems = document.querySelectorAll('.menu-list__item')
+    
     menuListItems.forEach(item => {
       item.addEventListener('click', () => {
-        menuListItems.forEach(itemAll => {
+        menuListItems.forEach((itemAll,i) => {
           if(itemAll.classList.contains('menu-list__item-red')) {
             itemAll.classList.remove('menu-list__item-red')
           }
@@ -493,13 +497,49 @@
       })
     })
 
+
     // slider
+    const rounds = document.querySelector('.rounds')
+
     const arrowLeft = document.querySelector('.arrow-left')
     const arrowRight = document.querySelector('.arrow-right')
 
     const sliderUl = document.querySelector('.main-fon-list')
     const sliderList = document.querySelectorAll('.main-fon-item')
     let countSlide = 0;
+
+    sliderList.forEach(item => {
+      let round = document.createElement('div')
+      round.classList.add('round')
+      rounds.append(round)
+    })
+
+    const round = document.querySelectorAll('.round')
+    let roundsWidth = rounds.clientWidth
+    rounds.style.transform = `translateX(-${roundsWidth/2}px)`
+    round[0].classList.add('round-active')
+
+
+    round.forEach((item, i) => {
+      item.addEventListener('click', () => {
+        if(i == 0) {
+          sliderUl.style.transform = `translate(0%)`
+        } else if(countSlide == sliderList.length - 1) {
+          sliderUl.style.transform = `translate(-${sliderList.length - 1}00%)`
+        } else {
+          countSlide = i
+          sliderUl.style.transform = `translate(-${countSlide}00%)`
+        }
+
+        round.forEach((itemAll,i) => {
+          if(itemAll.classList.contains('round-active')) {
+            itemAll.classList.remove('round-active')
+          }
+        })
+        !item.classList.contains('round-active') ? item.classList.add('round-active') : ''
+      })
+    })
+
     arrowLeft.addEventListener('click', () => {
       if(countSlide == 0) {
         countSlide = 3
@@ -508,7 +548,15 @@
         countSlide -= 1
         sliderUl.style.transform = `translate(-${countSlide}00%)`
       }
+
+      sliderList.forEach((item, i) => {
+        if(round[i].classList.contains('round-active')) {
+          round[i].classList.remove('round-active')
+        }
+        !round[countSlide].classList.contains('round-active') ? round[countSlide].classList.add('round-active') : ''
+      })
     })
+
 
     arrowRight.addEventListener('click', () => {
       if(countSlide == sliderList.length - 1) {
@@ -518,6 +566,13 @@
         countSlide += 1
         sliderUl.style.transform = `translate(-${countSlide}00%)`
       }
+
+      sliderList.forEach((item, i) => {
+        if(round[i].classList.contains('round-active')) {
+          round[i].classList.remove('round-active')
+        }
+        !round[countSlide].classList.contains('round-active') ? round[countSlide].classList.add('round-active') : ''
+      })
     })
 
     // прокрутка меню

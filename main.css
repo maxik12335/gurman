@@ -92,6 +92,27 @@ body {
   font-weight: 400;
 }
 
+.rounds {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.round {
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+}
+
+.round-active {
+  background-color: white;
+}
+
 .menu-list {
   width: 70%;
   display: flex;
@@ -380,6 +401,11 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .arrow-left, .arrow-right {
+    padding: 10px;
+    font-size: 14px;
   }
 
   .menu-list {
