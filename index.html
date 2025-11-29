@@ -533,14 +533,18 @@
 
   <script>
 
-    function sendTgTest() {
+    function sendTgTest(list) {
       let telegram_bot_token = '8026306365:AAE2Sx8FJTJ0W7aRpjKtF-zjJTGGMAsAtHI';
-let telegram_chat_id = '@gurman_zakazi_bot';
- 
-let form = document.querySelector("form.telegram_bot");
- 
-let form_name = 'text name text'
-let form_text = 'text name text'
+      let telegram_chat_id = '872974309';
+      
+      let form = document.querySelector("form.telegram_bot");
+      
+      let form_name = 'Заказ №1'
+      let form_text = ''
+      list.forEach(item => {
+        form_text += `${item[0]} - ${item[1]}  \n`
+      })
+      console.log(form_text)
 
     fetch('https://api.telegram.org/bot' + telegram_bot_token + '/sendMessage', {
         method: 'POST',
@@ -631,7 +635,7 @@ function sendTg() {
         })
 
         zakazCloseButton.addEventListener('click', () => {
-          sendTgTest(zakazCloseButton)
+          sendTgTest(zakazList)
           zakazList = []
           zakazFinish.classList.add('zakaz-container_oplata-open')
           setTimeout(() => {
