@@ -533,6 +533,30 @@
 
   <script>
 
+    function sendTgTest() {
+      let telegram_bot_token = '8026306365:AAHsfEx44g2IuDOslBK0XEko3LNzXelKtZc';
+let telegram_chat_id = '@gurman_zakazi_bot';
+ 
+let form = document.querySelector("form.telegram_bot");
+ 
+let form_name = 'text name text'
+let form_text = 'text name text'
+
+    fetch('https://api.telegram.org/bot' + telegram_bot_token + '/sendMessage', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            chat_id: telegram_chat_id,
+            text: form_name + '\n' + form_text + '\n'
+        })
+    })
+    .catch(error => {
+        console.error('Error sending message:', error);
+    });
+}
+
 function sendTg() {
 // Просто оборачиваем массив в объект, чтобы передать его как JSON
     const dataToSend = {
@@ -607,7 +631,7 @@ function sendTg() {
         })
 
         zakazCloseButton.addEventListener('click', () => {
-          sendTg(zakazList)
+          sendTgTest(zakazCloseButton)
           zakazList = []
           zakazFinish.classList.add('zakaz-container_oplata-open')
           setTimeout(() => {
