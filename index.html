@@ -24,17 +24,56 @@
   <title>ГурманЪ</title>
 </head>
 <body>
+
+  <!-- Заказ -->
+    <div class="zakaz">
+      <div class="zakaz-container">
+        <div class="zakaz-container_oplata">
+          <p class="zakaz-container_oplata-title">Спасибо за заказ !</p>
+          <p class="zakaz-container_oplata-desc">ожидайте...</p>
+          <img class="zakaz-container_oplata-img" src="img/cat.png" alt="">
+        </div>
+        <div class="zakaz-close">
+          <span class="zakaz-close_one"></span>
+          <span class="zakaz-close_two"></span>
+        </div>
+        <h2 class="zakaz-title">Ваш заказ</h2>
+
+        <ul class="zakaz-list">
+          <!-- заказ -->
+          <!-- <li class="zakaz-list__item">
+            <p class="zakaz-name">
+              <button class="zakaz-delete">x</button>
+              Свиная Биг
+            </p>
+            <p class="zakaz-price">300 р</p>
+          </li> -->
+        </ul>
+
+        <p class="zakaz-sum">
+          <span class="zakaz-sum__name">Итого</span>
+          <span class="zakaz-sum__price">3 000</span>
+        </p>
+
+        <button class="zakaz-button">заказать</button>
+      </div>
+    </div>
+
+    <!-- корзина открыть -->
+    <button class="corzina">
+      заказ на 150 р
+    </button>
+
   <header class="header">
     <div class="container">
       <div class="logo">
         <img class="logo" src="img/logo.png" alt="">
-        <!-- <p>ГурманЪ</p>
-        <p>Добро пожаловать !</p> -->
+        <div class="dostavka">
+          <p class="dostavka-title">доставка</p>
+          <a href="tel:+79101055819" class="dostavka-tel">+7 910 105 58 19</a>
+        </div>
       </div>
       <ul class="menu-list">
-        <!-- <li class="menu-list__item">
-          <a class="menu-list__link menu-list__link-red" href="#shaurma">Доставка</a>
-        </li> -->
         <li class="menu-list__item">
           <a class="menu-list__link" href="#shaurma">Шаурма</a>
         </li>
@@ -70,8 +109,11 @@
           </li>
           <li class="main-fon-item">
             <img class="main-fon__img" src="img/shaurma.jfif" alt="">
-            <p class="main-fon__title">Шаурма</p>
-            <p class="main-fon__text">Самое популярное блюдо полюбившееся многим</p>
+            <p class="main-fon__title">Доставка</p>
+            <p class="main-fon__text">Позвони и доставим за 1 час от 1500 р</p>
+            <p class="main-fon__text">
+              <a class="main-fon__text-tel" href="tel:+79101055819">+7 910 105 58 19</a>
+            </p>
           </li>
           <li class="main-fon-item">
             <img class="main-fon__img" src="img/lulya.png" alt="">
@@ -80,17 +122,16 @@
           </li>
           <li class="main-fon-item">
             <img class="main-fon__img" src="img/gribi.jpeg" alt="">
-            <p class="main-fon__title">Грибы</p>
-            <p class="main-fon__text">Гастрономическая бомба подаётся с сырным соусом</p>
+            <p class="main-fon__title">Мы рядом !</p>
+            <p class="main-fon__text">Гагарина 82 а</p>
+            <iframe class="map" src="https://yandex.ru/map-widget/v1/?ll=43.979989%2C56.278168&mode=search&oid=141552708588&ol=biz&z=16.63"  frameborder="1" allowfullscreen="true"></iframe>
           </li>
         </ul>
         <div class="arrows">
-          <div class="arrow-left">лево</div>
+          <div class="arrow-left"></div>
           <div class="arrow-right">право</div>
         </div>
-        <div class="rounds">
-          
-        </div>
+        <div class="rounds"></div>
       </div>
     <div class="container">
       <ul class="food-list">
@@ -104,6 +145,7 @@
                 <p class="food-price">300 р</p>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
+              <button class="food-list-item-button" data-name="Свиная Биг" data-price="300">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
@@ -111,6 +153,7 @@
                 <p class="food-price">270 р</p>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
+              <button class="food-list-item-button" data-name="Свиная стандарт" data-price="270">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
@@ -118,6 +161,7 @@
                 <p class="food-price">290 р</p>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
+              <button class="food-list-item-button" data-name="Куриная Биг" data-price="290">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
@@ -125,6 +169,7 @@
                 <p class="food-price">270 р</p>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
+              <button class="food-list-item-button" data-name="Куриная стандарт" data-price="270">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
@@ -132,6 +177,7 @@
                 <p class="food-price">250 р</p>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
+              <button class="food-list-item-button" data-name="Вегетарианская Биг" data-price="250">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
@@ -139,6 +185,7 @@
                 <p class="food-price">220 р</p>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
+              <button class="food-list-item-button" data-name="Вегетарианская стандарт" data-price="220">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
@@ -146,6 +193,7 @@
                 <p class="food-price">300 р</p>
               </div>
               <img class="food-img" src="img/donar.png" alt="">
+              <button class="food-list-item-button" data-name="Донар свиной" data-price="300">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
@@ -153,6 +201,7 @@
                 <p class="food-price">300 р</p>
               </div>
               <img class="food-img" src="img/donar.png" alt="">
+              <button class="food-list-item-button" data-name="Донар куриный" data-price="300">добавить</button>
             </li>
           </ul>
         </li>
@@ -483,97 +532,212 @@
   </main>
 
   <script>
-
-    const menuListItems = document.querySelectorAll('.menu-list__item')
-    
-    menuListItems.forEach(item => {
-      item.addEventListener('click', () => {
-        menuListItems.forEach((itemAll,i) => {
-          if(itemAll.classList.contains('menu-list__item-red')) {
-            itemAll.classList.remove('menu-list__item-red')
-          }
+    // заказ
+      const corzina = document.querySelector('.corzina')
+      const zakaz = document.querySelector('.zakaz')
+      const zakazFinish = document.querySelector('.zakaz-container_oplata')
+      const zakazProducts = document.querySelector('.zakaz-list')
+      const zakazAddedButton = document.querySelectorAll('.food-list-item-button')
+      const zakazCloseButton = document.querySelector('.zakaz-button')
+      var zakazList = []
+      
+      // открыть закрыть заказ
+        corzina.addEventListener('click', () => {
+          corzina.classList.contains('corzina-open') ? corzina.classList.remove('corzina-open') : ''
+          zakaz.classList.contains('zakaz-open') ? '' : zakaz.classList.add('zakaz-open')
+          zakazProducts.innerHTML = ''
+          zakazList.forEach((item, i) => {
+            zakazProducts.innerHTML += `
+              <li class="zakaz-list__item">
+                <p class="zakaz-name">
+                  <button class="zakaz-delete" onclick="deleteZakaz(event, ${i})" data-count-zakaz-list='${i}'>x</button>
+                  ${item[0]}
+                </p>
+                <p class="zakaz-price">${item[1]} р</p>
+              </li>
+            `
+          })
+          setSumItog(zakazList)
         })
-        !item.classList.contains('menu-list__item-red') ? item.classList.add('menu-list__item-red') : ''
+
+        zakazCloseButton.addEventListener('click', () => {
+          zakazList = []
+          zakazFinish.classList.add('zakaz-container_oplata-open')
+          setTimeout(() => {
+            zakaz.classList.contains('zakaz-open') ? zakaz.classList.remove('zakaz-open') : ''
+            corzina.classList.contains('corzina-open') ? corzina.classList.remove('corzina-open') : ''
+            zakazFinish.classList.remove('zakaz-container_oplata-open')
+          }, 3000);
+        })
+
+      // Закрыть заказ
+        const closeZakaz = document.querySelector('.zakaz-close') 
+        closeZakaz.addEventListener('click', () => {
+          zakaz.classList.contains('zakaz-open') ? zakaz.classList.remove('zakaz-open') : ''
+          if(zakazList.length != 0) {
+            corzina.classList.contains('corzina-open') ? '' : corzina.classList.add('corzina-open')
+          }
+          corzina.textContent = `заказ на ${getSumZakaz()} р`
+        })
+
+        function getSumZakaz() {
+          let sum = 0
+          zakazList.forEach(item => sum += item[1])
+          return sum
+        }
+
+      // Удалить заказ
+        function deleteZakaz(event, i) {
+          zakazList.splice(+event.target.getAttribute('data-count-zakaz-list'), 1)
+          if(zakazList.length == 0) {
+            zakaz.classList.contains('zakaz-open') ? zakaz.classList.remove('zakaz-open') : ''
+            corzina.classList.contains('corzina-open') ? corzina.classList.remove('corzina-open') : ''
+          }
+          zakazProducts.innerHTML = ''
+
+          zakazList.forEach((item, i) => {
+            zakazProducts.innerHTML += `
+              <li class="zakaz-list__item">
+                <p class="zakaz-name">
+                  <button class="zakaz-delete" onclick="deleteZakaz(event, ${i})" data-count-zakaz-list='${i}'>x</button>
+                  ${item[0]}
+                </p>
+                <p class="zakaz-price">${item[1]} р</p>
+              </li>
+            `
+          })
+
+
+          setSumItog(zakazList)
+        }
+
+      // Сумма итога
+        function setSumItog(zakazList) {
+          let sumItog = document.querySelector('.zakaz-sum__price')
+          let sum = 0
+          zakazList.forEach((item, i) => {
+            sum += item[1]
+          })
+
+          sumItog.textContent = sum
+        }
+          
+      // кнопка добавить заказ
+        zakazAddedButton.forEach(item => {
+          item.addEventListener('click', () => {
+            corzina.classList.contains('corzina-open') ? '' : corzina.classList.add('corzina-open')
+            const name = item.getAttribute('data-name')
+            const price = +item.getAttribute('data-price')
+
+            zakazList.push([name, price])
+
+            // const getSumZakaz = () => {
+            //   let sum = 0
+            //   zakazList.forEach(item => sum += item[1])
+            //   return sum
+            // }
+            corzina.textContent = `заказ на ${getSumZakaz()} р`
+          })
+        })
+
+    
+
+
+    // стрелки слайдера
+      document.querySelector('.arrow-left').textContent = '<-'
+      document.querySelector('.arrow-right').textContent = '->'
+
+    // меню
+      const menuListItems = document.querySelectorAll('.menu-list__item')
+      
+      menuListItems.forEach(item => {
+        item.addEventListener('click', () => {
+          menuListItems.forEach((itemAll,i) => {
+            if(itemAll.classList.contains('menu-list__item-red')) {
+              itemAll.classList.remove('menu-list__item-red')
+            }
+          })
+          !item.classList.contains('menu-list__item-red') ? item.classList.add('menu-list__item-red') : ''
+        })
       })
-    })
 
 
     // slider
-    const rounds = document.querySelector('.rounds')
+      const rounds = document.querySelector('.rounds')
 
-    const arrowLeft = document.querySelector('.arrow-left')
-    const arrowRight = document.querySelector('.arrow-right')
+      const arrowLeft = document.querySelector('.arrow-left')
+      const arrowRight = document.querySelector('.arrow-right')
 
-    const sliderUl = document.querySelector('.main-fon-list')
-    const sliderList = document.querySelectorAll('.main-fon-item')
-    let countSlide = 0;
+      const sliderUl = document.querySelector('.main-fon-list')
+      const sliderList = document.querySelectorAll('.main-fon-item')
+      let countSlide = 0;
 
-    sliderList.forEach(item => {
-      let round = document.createElement('div')
-      round.classList.add('round')
-      rounds.append(round)
-    })
+      sliderList.forEach(item => {
+        let round = document.createElement('div')
+        round.classList.add('round')
+        rounds.append(round)
+      })
 
-    const round = document.querySelectorAll('.round')
-    let roundsWidth = rounds.clientWidth
-    rounds.style.transform = `translateX(-${roundsWidth/2}px)`
-    round[0].classList.add('round-active')
+      const round = document.querySelectorAll('.round')
+      let roundsWidth = rounds.clientWidth
+      rounds.style.transform = `translateX(-${roundsWidth/2}px)`
+      round[0].classList.add('round-active')
 
 
-    round.forEach((item, i) => {
-      item.addEventListener('click', () => {
-        if(i == 0) {
-          sliderUl.style.transform = `translate(0%)`
-        } else if(countSlide == sliderList.length - 1) {
-          sliderUl.style.transform = `translate(-${sliderList.length - 1}00%)`
+      round.forEach((item, i) => {
+        item.addEventListener('click', () => {
+          if(i == 0) {
+            sliderUl.style.transform = `translate(0%)`
+          } else if(countSlide == sliderList.length - 1) {
+            sliderUl.style.transform = `translate(-${sliderList.length - 1}00%)`
+          } else {
+            countSlide = i
+            sliderUl.style.transform = `translate(-${countSlide}00%)`
+          }
+
+          round.forEach((itemAll,i) => {
+            if(itemAll.classList.contains('round-active')) {
+              itemAll.classList.remove('round-active')
+            }
+          })
+          !item.classList.contains('round-active') ? item.classList.add('round-active') : ''
+        })
+      })
+
+      arrowLeft.addEventListener('click', () => {
+        if(countSlide == 0) {
+          countSlide = 3
+          sliderUl.style.transform = `translate(-${countSlide}00%)`
         } else {
-          countSlide = i
+          countSlide -= 1
           sliderUl.style.transform = `translate(-${countSlide}00%)`
         }
 
-        round.forEach((itemAll,i) => {
-          if(itemAll.classList.contains('round-active')) {
-            itemAll.classList.remove('round-active')
+        sliderList.forEach((item, i) => {
+          if(round[i].classList.contains('round-active')) {
+            round[i].classList.remove('round-active')
           }
+          !round[countSlide].classList.contains('round-active') ? round[countSlide].classList.add('round-active') : ''
         })
-        !item.classList.contains('round-active') ? item.classList.add('round-active') : ''
       })
-    })
 
-    arrowLeft.addEventListener('click', () => {
-      if(countSlide == 0) {
-        countSlide = 3
-        sliderUl.style.transform = `translate(-${countSlide}00%)`
-      } else {
-        countSlide -= 1
-        sliderUl.style.transform = `translate(-${countSlide}00%)`
-      }
 
-      sliderList.forEach((item, i) => {
-        if(round[i].classList.contains('round-active')) {
-          round[i].classList.remove('round-active')
+      arrowRight.addEventListener('click', () => {
+        if(countSlide == sliderList.length - 1) {
+          countSlide = 0
+          sliderUl.style.transform = `translate(0%)`
+        } else {
+          countSlide += 1
+          sliderUl.style.transform = `translate(-${countSlide}00%)`
         }
-        !round[countSlide].classList.contains('round-active') ? round[countSlide].classList.add('round-active') : ''
+
+        sliderList.forEach((item, i) => {
+          if(round[i].classList.contains('round-active')) {
+            round[i].classList.remove('round-active')
+          }
+          !round[countSlide].classList.contains('round-active') ? round[countSlide].classList.add('round-active') : ''
+        })
       })
-    })
-
-
-    arrowRight.addEventListener('click', () => {
-      if(countSlide == sliderList.length - 1) {
-        countSlide = 0
-        sliderUl.style.transform = `translate(0%)`
-      } else {
-        countSlide += 1
-        sliderUl.style.transform = `translate(-${countSlide}00%)`
-      }
-
-      sliderList.forEach((item, i) => {
-        if(round[i].classList.contains('round-active')) {
-          round[i].classList.remove('round-active')
-        }
-        !round[countSlide].classList.contains('round-active') ? round[countSlide].classList.add('round-active') : ''
-      })
-    })
 
     // прокрутка меню
     document.addEventListener('DOMContentLoaded', () => {
