@@ -532,6 +532,52 @@
   </main>
 
   <script>
+
+function sendTg() {
+// Просто оборачиваем массив в объект, чтобы передать его как JSON
+    const dataToSend = {
+        myArray: zakazList
+    };
+    
+    fetch('tg.php', { // Указываем путь к вашему PHP-скрипту
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json' // Указываем, что отправляем JSON
+        },
+        body: JSON.stringify(dataToSend) 
+    })
+    .then(response => {
+        // Если ответ не успешный (например, 404, 500)
+        if (!response.ok) {
+            return response.text().then(errText => { throw new Error(`HTTP ${response.status}: ${errText}`); });
+        }
+        return response.text(); // Получаем ответ от PHP как текст
+      })
+    .then(data => {
+        // Обработка ответа от PHP-скрипта
+        if (data.includes("успешно отправлено") || data.includes("Спасибо")) { // Проверяем на ключевые слова успеха
+            responseMessageDiv.textContent = "Ваше сообщение успешно отправлено! Спасибо!";
+            responseMessageDiv.className = 'response-message success';
+            form.reset(); // Очищаем форму
+        } else {
+            responseMessageDiv.textContent = "Ошибка: " + data;
+            responseMessageDiv.className = 'response-message error';
+        }
+        responseMessageDiv.style.display = 'block'; // Показываем сообщение
+    })
+    .catch((error) => {
+        // Обработка ошибок сети или других проблем
+        // responseMessageDiv.textContent = "Произошла ошибка при отправке: " + error;
+        // responseMessageDiv.className = 'response-message error';
+        // responseMessageDiv.style.display = 'block';
+    })
+    .finally(() => {
+        // Включаем кнопку обратно
+        // submitButton.disabled = false;
+        // submitButton.textContent = 'Отправить';
+    });
+}
+
     // заказ
       const corzina = document.querySelector('.corzina')
       const zakaz = document.querySelector('.zakaz')
@@ -561,6 +607,7 @@
         })
 
         zakazCloseButton.addEventListener('click', () => {
+          sendTg(zakazList)
           zakazList = []
           zakazFinish.classList.add('zakaz-container_oplata-open')
           setTimeout(() => {
