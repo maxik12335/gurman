@@ -745,7 +745,7 @@ button:focus {
   }
 
   .main-fon {
-    /* height: 250px; */
+    height: 60vh;
   }
 
   .main-fon__title {
