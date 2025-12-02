@@ -732,6 +732,7 @@ button:focus {
   .arrow-left, .arrow-right {
     padding: 10px;
     font-size: 14px;
+    background-color: #ffffff47;
   }
 
   .menu-list {
