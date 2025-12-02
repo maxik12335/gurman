@@ -446,7 +446,7 @@ button:focus {
   display: none;
   align-items: center;
   justify-content: center;
-  background-color: #bd4932;
+  background-color: #bd4932ba;
   color: white;
   border-radius: 4px;
   transform: translateX(-100px);
