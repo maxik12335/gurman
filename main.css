@@ -241,8 +241,8 @@ button:focus {
 }
 
 .food-list-item-button {
-  background-color: #ffffffab;
-  color: #464646;
+  background-color: #bd4932ba;
+  color: white;
   border-radius: 5%;
   width: 100px;
   height: 40px;
