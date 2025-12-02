@@ -68,8 +68,11 @@
 
   <header class="header">
     <div class="container">
-      <div class="logo">
-        <img class="logo" src="img/logo.png" alt="">
+      <div class="logo-box">
+        <p class="logo">
+          ГурманЪ
+          <img src="img/shawarma.png" alt="">
+        </p>
         <div class="dostavka">
           <p class="dostavka-title">доставка</p>
           <a href="tel:+79101055819" class="dostavka-tel">+7 910 105 58 19</a>
@@ -117,7 +120,7 @@
               <a class="main-fon__text-tel" href="tel:+79101055819">+7 910 105 58 19</a>
             </p>
           </li>
-          <li class="main-fon-item">
+          <!-- <li class="main-fon-item">
             <img class="main-fon__img" src="img/lulya.png" alt="">
             <p class="main-fon__title">Люля-кебаб</p>
             <p class="main-fon__text">Приходи и попробуй люля из свежей говядины</p>
@@ -127,11 +130,11 @@
             <p class="main-fon__title">Мы рядом !</p>
             <p class="main-fon__text">Гагарина 82 а</p>
             <iframe class="map" src="https://yandex.ru/map-widget/v1/?ll=43.979989%2C56.278168&mode=search&oid=141552708588&ol=biz&z=16.63"  frameborder="1" allowfullscreen="true"></iframe>
-          </li>
+          </li> -->
         </ul>
         <div class="arrows">
           <div class="arrow-left"></div>
-          <div class="arrow-right">право</div>
+          <div class="arrow-right"></div>
         </div>
         <div class="rounds"></div>
       </div>
@@ -143,67 +146,83 @@
           <ul class="food-list-block">
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Свиная Биг</p>
-                <p class="food-price">300 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Свиная Биг</p>
+                  <p class="food-price">300 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Свиная Биг" data-price="300">добавить</button>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
-              <button class="food-list-item-button" data-name="Свиная Биг" data-price="300">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Свиная стандарт</p>
-                <p class="food-price">270 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Свиная стандарт</p>
+                  <p class="food-price">270 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Свиная стандарт" data-price="270">добавить</button>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
-              <button class="food-list-item-button" data-name="Свиная стандарт" data-price="270">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Куриная Биг</p>
-                <p class="food-price">290 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Куриная Биг</p>
+                  <p class="food-price">290 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Куриная Биг" data-price="290">добавить</button>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
-              <button class="food-list-item-button" data-name="Куриная Биг" data-price="290">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Куриная стандарт</p>
-                <p class="food-price">270 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Куриная стандарт</p>
+                  <p class="food-price">270 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Куриная стандарт" data-price="270">добавить</button>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
-              <button class="food-list-item-button" data-name="Куриная стандарт" data-price="270">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Вегетарианская Биг</p>
-                <p class="food-price">250 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Вегетарианская Биг</p>
+                  <p class="food-price">250 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Вегетарианская Биг" data-price="250">добавить</button>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
-              <button class="food-list-item-button" data-name="Вегетарианская Биг" data-price="250">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Вегетарианская стандарт</p>
-                <p class="food-price">220 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Вегетарианская стандарт</p>
+                  <p class="food-price">220 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Вегетарианская стандарт" data-price="220">добавить</button>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
-              <button class="food-list-item-button" data-name="Вегетарианская стандарт" data-price="220">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Донар свиной</p>
-                <p class="food-price">300 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Донар свиной</p>
+                  <p class="food-price">300 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Донар свиной" data-price="300">добавить</button>
               </div>
               <img class="food-img" src="img/donar.png" alt="">
-              <button class="food-list-item-button" data-name="Донар свиной" data-price="300">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Донар куриный</p>
-                <p class="food-price">300 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Донар куриный</p>
+                  <p class="food-price">300 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Донар куриный" data-price="300">добавить</button>
               </div>
               <img class="food-img" src="img/donar.png" alt="">
-              <button class="food-list-item-button" data-name="Донар куриный" data-price="300">добавить</button>
             </li>
           </ul>
         </li>
@@ -214,50 +233,71 @@
           <ul class="food-list-block">
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Свиная шейка 200 г</p>
-                <p class="food-price">450 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Свиная шейка 200 г</p>
+                  <p class="food-price">450 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Свиная шейка" data-price="450">добавить</button>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Куриный шашлык (филе) 200 г</p>
-                <p class="food-price">420 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Куриный шашлык (филе) 200 г</p>
+                  <p class="food-price">420 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Куриный шашлык (филе)" data-price="420">добавить</button>
               </div>
               <img class="food-img" src="img/shahlik.png" alt="">
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Куриные крылья 200 г</p>
-                <p class="food-price">300 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Куриные крылья 200 г</p>
+                  <p class="food-price">300 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Куриные крылья" data-price="300">добавить</button>
               </div>
               <img class="food-img" src="img/kur-krilya.png " alt="">
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Люля-кебаб (баранина) 200 г</p>
-                <p class="food-price">400 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Люля-кебаб (баранина) 200 г</p>
+                  <p class="food-price">400 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Люля-кебаб (баранина)" data-price="400">добавить</button>
               </div>
               <img class="food-img" src="img/lulya.png" alt="">
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Люля-кебаб (курица) 200 г</p>
-                <p class="food-price">350 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Люля-кебаб (курица) 200 г</p>
+                  <p class="food-price">350 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Люля-кебаб (курица)" data-price="350">добавить</button>
               </div>
               <img class="food-img" src="img/lulya.png" alt="">
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Грибы 150 г</p>
-                <p class="food-price">300 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Грибы 150 г</p>
+                  <p class="food-price">300 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Грибы" data-price="300">добавить</button>
               </div>
               <img class="food-img" src="img/gribi.jpeg" alt="">
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Овощи на мангале 100 г</p>
-                <p class="food-price">150 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Овощи на мангале 100 г</p>
+                  <p class="food-price">150 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Овощи на мангале" data-price="150">добавить</button>
               </div>
               <img class="food-img" src="img/ovoshi.png" alt="">
             </li>
@@ -270,36 +310,51 @@
           <ul class="food-list-block">
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Чобан (овощной)</p>
-                <p class="food-price">220 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Чобан (овощной)</p>
+                  <p class="food-price">220 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Чобан (овощной)" data-price="220">добавить</button>
               </div>
               <img class="food-img" src="img/choban.jpg" alt="">
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Греческий</p>
-                <p class="food-price">240 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Греческий</p>
+                  <p class="food-price">240 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Греческий" data-price="240">добавить</button>
               </div>
               <img class="food-img" src="img/grecheski.jpg" alt="">
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Цезарь с курицей</p>
-                <p class="food-price">350 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Цезарь с курицей</p>
+                  <p class="food-price">350 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Цезарь с курицей" data-price="350">добавить</button>
               </div>
               <img class="food-img" src="img/cezar.jpg" alt="">
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Карпиз</p>
-                <p class="food-price">350 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Карпиз</p>
+                  <p class="food-price">350 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Карпиз" data-price="350">добавить</button>
               </div>
               <img class="food-img" src="img/carpiz.jfif" alt="">
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Оливье</p>
-                <p class="food-price">330 р</p>
+                <div class="food-text">
+                  <p class="food-position-name">Оливье</p>
+                  <p class="food-price">330 р</p>
+                </div>
+                <button class="food-list-item-button" data-name="Оливье" data-price="330">добавить</button>
               </div>
               <img class="food-img" src="img/olive.png" alt="">
             </li>
@@ -308,14 +363,16 @@
 
         <!-- Комбо -->
         <li class="food-list__item" id="combo">
-          <h2 class="food-block-title">Шаурма</h2>
+          <h2 class="food-block-title">Комбо</h2>
           <ul class="food-list-block">
             <li class="food-list-block__item">
               <div class="food-content">
-                <p class="food-position-name">Свиная Биг</p>
+                <p class="food-position-name">Куриное комбо</p>
+                <p class="food-position-name__desc">Куриная шаурма, фри, морс</p>
                 <p class="food-price">300 р</p>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
+              <button class="food-list-item-button" data-name="Чобан (овощной)" data-price="220">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
@@ -323,6 +380,7 @@
                 <p class="food-price">300 р</p>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
+              <button class="food-list-item-button" data-name="Чобан (овощной)" data-price="220">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
@@ -330,6 +388,7 @@
                 <p class="food-price">300 р</p>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
+              <button class="food-list-item-button" data-name="Чобан (овощной)" data-price="220">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
@@ -337,6 +396,7 @@
                 <p class="food-price">300 р</p>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
+              <button class="food-list-item-button" data-name="Чобан (овощной)" data-price="220">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
@@ -344,6 +404,7 @@
                 <p class="food-price">300 р</p>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
+              <button class="food-list-item-button" data-name="Чобан (овощной)" data-price="220">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
@@ -351,6 +412,7 @@
                 <p class="food-price">300 р</p>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
+              <button class="food-list-item-button" data-name="Чобан (овощной)" data-price="220">добавить</button>
             </li>
             <li class="food-list-block__item">
               <div class="food-content">
@@ -358,6 +420,7 @@
                 <p class="food-price">300 р</p>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
+              <button class="food-list-item-button" data-name="Чобан (овощной)" data-price="220">добавить</button>
             </li>
           </ul>
         </li>
@@ -535,6 +598,11 @@
 
   <script>
 
+    // query params
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    console.log(urlParams.get('page'))
+
     function sendTgTest(list) {
       let telegram_bot_token = '8026306365:AAE2Sx8FJTJ0W7aRpjKtF-zjJTGGMAsAtHI';
       let telegram_chat_id = '872974309';
@@ -544,27 +612,11 @@
       let form_name = 'Заказ №1'
       let form_text = ''
       let form_sum = 0
+      let form_table = `Cтол: ${urlParams.get('page')}`
       list.forEach(item => {
-        form_text += `${item[0]} - ${item[1]}  \n`
+        form_text += `${item[0]} - ${item[1]} \n`
         form_sum += item[1]
-      })
-
-      fetch('tg.pgp', {
-          method: 'GET'
-      }).then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            // Если нужно использовать номер заказа в телеге
-            const orderNumber = data.counter;
-            console.log(orderNumber)
-        } else {
-            console.error('Ошибка сохранения:', data.error);
-        }
-    })
-    .catch(error => {
-        console.error('Ошибка:', error);
-    });
-      
+      })        
 
       fetch('https://api.telegram.org/bot' + telegram_bot_token + '/sendMessage', {
           method: 'POST',
@@ -573,7 +625,7 @@
           },
           body: JSON.stringify({
               chat_id: telegram_chat_id,
-              text: form_name + '\n\n' + form_text + '\n' + 'Итого: ' + form_sum +' р'
+              text: form_name + '\n' + form_table + '\n\n' + form_text + '\n' + 'Итого: ' + form_sum +' р'
           })
       })
       .catch(error => {
@@ -701,9 +753,6 @@
             corzina.textContent = `заказ на ${getSumZakaz()} р`
           })
         })
-
-    
-
 
     // стрелки слайдера
       document.querySelector('.arrow-left').textContent = '<-'

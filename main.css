@@ -34,6 +34,15 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Open Sans'; /* Имя, которое вы будете использовать в CSS */
+  src: url('fonts/TTNormsPro-ExtraBold.woff2') format('woff2'), /* Поддержка современных браузеров */
+       url('fonts/TTNormsPro-ExtraBold.woff') format('woff'), /* Поддержка современных браузеров */
+       url('fonts/TTNormsPro-ExtraBold.ttf') format('truetype'); /* Поддержка современных браузеров */
+  font-weight: 700; /* Или 400 */
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -79,7 +88,29 @@ body {
 }
 
 .logo {
-  width: 200px;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 10px 15px;
+  background-color: #bd4932;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+}
+
+.logo img {
+  width: 30px;
+  margin-left: 10px;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+}
+
+.dostavka {
+  margin-left: 15px;
 }
 
 .rounds {
@@ -124,7 +155,7 @@ body {
   font-family: 'Open Sans';
   text-decoration: none;
   color: black;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .2);
   border-radius: 4px;
   width: 100%;
   height: 100%;
@@ -159,6 +190,7 @@ body {
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .4);
   border-radius: 4px;
   overflow: hidden;
+  /* display: none; */
 }
 
 .main-fon-list {
@@ -248,15 +280,11 @@ button:focus {
   height: 40px;
   border: none;
   outline: none;
-  position: absolute;
-  right: 35px;
-  bottom: 35px;
   cursor: pointer;
 }
 
 .food-list-item-button:hover {
-  background-color: white;
-  color: #bd4932;
+  background-color: #bd49326c;
 }
 
 
@@ -281,7 +309,7 @@ button:focus {
 .food-list-block__item {
   width: 48%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column-reverse;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
@@ -297,8 +325,11 @@ button:focus {
 .food-content {
   padding: 20px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;  
+  align-items: center;
+  width: 100%;
+  height: 30%;
+  color: black;
 }
 
 .food-img {
@@ -306,20 +337,11 @@ button:focus {
   height: 100%;
   object-fit: cover;
   transition: 0.2s;
-}
-
-/* .food-list-block__item:hover */
-.food-content {
-  color: white;
+  width: 100%;
+  height: 70%;
 }
 
 /* .food-list-block__item:hover  */
-.food-img {
-  width: 100%;
-  position: absolute;
-  /* filter: brightness(0.8); */
-  z-index: -1;
-}
 
 .food-position-name {
   font-size: 20px;
@@ -630,6 +652,11 @@ button:focus {
     min-width: 90%;
     padding: 50px;
   }
+  .menu-list {
+    /* flex-wrap: wrap; */
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
 }
 
 @media (max-width: 840px) {
@@ -637,10 +664,13 @@ button:focus {
     width: 500px;
   }
 
-  .menu-list {
-    /* flex-wrap: wrap; */
-    justify-content: flex-start;
-    overflow-x: auto;
+  .header {
+    padding: 10px;
+  }
+
+  .logo-box {
+    width: 100%;
+    justify-content: space-between;
   }
 
   div.logo {
@@ -670,6 +700,7 @@ button:focus {
   .menu-list {
     width: 100%;
     margin-left: 0;
+    margin-top: 10px;
   }
 
  .menu-list::-webkit-scrollbar {
@@ -677,7 +708,7 @@ button:focus {
 }
 
   .menu-list__item {
-    min-width: 35%;
+    min-width: 25%;
     margin: 5px;
   }
 
@@ -722,8 +753,8 @@ button:focus {
     top: 115px;
   }
 
-  .header {
-    padding: 20px 0;
+  .logo {
+    font-size: 16px;
   }
 
   .logo p:last-child {
