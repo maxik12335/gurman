@@ -363,6 +363,14 @@ button:focus {
   position: relative;
 }
 
+.zakaz-container::-webkit-scrollbar { width: 0; }
+
+/* ie 10+ */
+.zakaz-container { -ms-overflow-style: none; }
+
+/* фф (свойство больше не работает, других способов тоже нет)*/
+.zakaz-container { overflow: -moz-scrollbars-none; }
+
 .zakaz-title {
   text-align: center;
   font-size: 50px;

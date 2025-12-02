@@ -613,8 +613,20 @@
           sendTgTest(zakazList)
           zakazList = []
           zakazFinish.classList.add('zakaz-container_oplata-open')
-          zakaz.classList.contains('zakaz-open') ? zakaz.classList.remove('zakaz-open') : ''
+          zakazProducts.innerHTML = ''
+          zakazList.forEach((item, i) => {
+            zakazProducts.innerHTML += `
+              <li class="zakaz-list__item">
+                <p class="zakaz-name">
+                  <button class="zakaz-delete" onclick="deleteZakaz(event, ${i})" data-count-zakaz-list='${i}'>x</button>
+                  ${item[0]}
+                </p>
+                <p class="zakaz-price">${item[1]} р</p>
+              </li>
+            `
+          })
           setTimeout(() => {
+            zakaz.classList.contains('zakaz-open') ? zakaz.classList.remove('zakaz-open') : ''
             corzina.classList.contains('corzina-open') ? corzina.classList.remove('corzina-open') : ''
             zakazFinish.classList.remove('zakaz-container_oplata-open')
           }, 3000);
