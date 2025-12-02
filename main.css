@@ -590,7 +590,7 @@ button:focus {
 .main-fon__text-tel {
   font-size: 15px;
   margin-top: 15px;
-  background-color: #bd4932;
+  background-color: #bd4932ba;
   color: white;
   display: flex;
   align-items: center;
