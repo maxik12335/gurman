@@ -24,7 +24,9 @@
   <title>ГурманЪ</title>
 </head>
 <body>
-
+<div id="order-counter" style="font-size: 18px; margin: 20px;">
+    Всего заказов: 0
+</div>
   <!-- Заказ -->
     <div class="zakaz">
       <div class="zakaz-container">
@@ -541,70 +543,43 @@
       
       let form_name = 'Заказ №1'
       let form_text = ''
+      let form_sum = 0
       list.forEach(item => {
         form_text += `${item[0]} - ${item[1]}  \n`
+        form_sum += item[1]
       })
-      console.log(form_text)
 
-    fetch('https://api.telegram.org/bot' + telegram_bot_token + '/sendMessage', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            chat_id: telegram_chat_id,
-            text: form_name + '\n' + form_text + '\n'
-        })
+      fetch('tg.pgp', {
+          method: 'GET'
+      }).then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Если нужно использовать номер заказа в телеге
+            const orderNumber = data.counter;
+            console.log(orderNumber)
+        } else {
+            console.error('Ошибка сохранения:', data.error);
+        }
     })
     .catch(error => {
-        console.error('Error sending message:', error);
+        console.error('Ошибка:', error);
     });
-}
+      
 
-function sendTg() {
-// Просто оборачиваем массив в объект, чтобы передать его как JSON
-    const dataToSend = {
-        myArray: zakazList
-    };
-    
-    fetch('tg.php', { // Указываем путь к вашему PHP-скрипту
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json' // Указываем, что отправляем JSON
-        },
-        body: JSON.stringify(dataToSend) 
-    })
-    .then(response => {
-        // Если ответ не успешный (например, 404, 500)
-        if (!response.ok) {
-            return response.text().then(errText => { throw new Error(`HTTP ${response.status}: ${errText}`); });
-        }
-        return response.text(); // Получаем ответ от PHP как текст
+      fetch('https://api.telegram.org/bot' + telegram_bot_token + '/sendMessage', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+              chat_id: telegram_chat_id,
+              text: form_name + '\n\n' + form_text + '\n' + 'Итого: ' + form_sum +' р'
+          })
       })
-    .then(data => {
-        // Обработка ответа от PHP-скрипта
-        if (data.includes("успешно отправлено") || data.includes("Спасибо")) { // Проверяем на ключевые слова успеха
-            responseMessageDiv.textContent = "Ваше сообщение успешно отправлено! Спасибо!";
-            responseMessageDiv.className = 'response-message success';
-            form.reset(); // Очищаем форму
-        } else {
-            responseMessageDiv.textContent = "Ошибка: " + data;
-            responseMessageDiv.className = 'response-message error';
-        }
-        responseMessageDiv.style.display = 'block'; // Показываем сообщение
-    })
-    .catch((error) => {
-        // Обработка ошибок сети или других проблем
-        // responseMessageDiv.textContent = "Произошла ошибка при отправке: " + error;
-        // responseMessageDiv.className = 'response-message error';
-        // responseMessageDiv.style.display = 'block';
-    })
-    .finally(() => {
-        // Включаем кнопку обратно
-        // submitButton.disabled = false;
-        // submitButton.textContent = 'Отправить';
-    });
-}
+      .catch(error => {
+          console.error('Error sending message:', error);
+      });
+    }
 
     // заказ
       const corzina = document.querySelector('.corzina')
@@ -638,8 +613,8 @@ function sendTg() {
           sendTgTest(zakazList)
           zakazList = []
           zakazFinish.classList.add('zakaz-container_oplata-open')
+          zakaz.classList.contains('zakaz-open') ? zakaz.classList.remove('zakaz-open') : ''
           setTimeout(() => {
-            zakaz.classList.contains('zakaz-open') ? zakaz.classList.remove('zakaz-open') : ''
             corzina.classList.contains('corzina-open') ? corzina.classList.remove('corzina-open') : ''
             zakazFinish.classList.remove('zakaz-container_oplata-open')
           }, 3000);
