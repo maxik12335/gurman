@@ -63,7 +63,8 @@
 
     <!-- корзина открыть -->
     <button class="corzina">
-      заказ на 150 р
+      <img class="corzina-img" src="img/basket.png">
+      <span class="corzina-text"></span>
     </button>
 
   <header class="header">
@@ -733,6 +734,7 @@
 
     // заказ
       const corzina = document.querySelector('.corzina')
+      const corzinaText = document.querySelector('.corzina-text')
       const zakaz = document.querySelector('.zakaz')
       const zakazFinish = document.querySelector('.zakaz-container_oplata')
       const zakazProducts = document.querySelector('.zakaz-list')
@@ -789,7 +791,7 @@
           if(zakazList.length != 0) {
             corzina.classList.contains('corzina-open') ? '' : corzina.classList.add('corzina-open')
           }
-          corzina.textContent = `заказ на ${getSumZakaz()} р`
+          corzinaText.textContent = `заказ на ${getSumZakaz()} р`
         })
 
         function getSumZakaz() {
@@ -848,7 +850,11 @@
             //   zakazList.forEach(item => sum += item[1])
             //   return sum
             // }
-            corzina.textContent = `заказ на ${getSumZakaz()} р`
+            corzinaText.textContent = `заказ на ${getSumZakaz()} р`
+            // const img = document.createElement('img')
+            // img.classList.add('corzina-img')
+            // img.setAttribute('src', "img/basket.png")
+            // corzina.prepend(img)
           })
         })
 

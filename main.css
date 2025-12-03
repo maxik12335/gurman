@@ -599,6 +599,11 @@ button:focus {
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 }
 
+.corzina-img {
+  height: 20px;
+  margin-right: 10px;
+}
+
 .zakaz-close {
   display: flex;
   align-items: center;
