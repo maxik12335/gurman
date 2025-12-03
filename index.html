@@ -30,40 +30,46 @@
   <!-- Заказ -->
     <div class="zakaz">
       <div class="zakaz-container">
-        <div class="zakaz-container_oplata">
-          <p class="zakaz-container_oplata-title">Спасибо за заказ !</p>
-          <p class="zakaz-container_oplata-desc">ожидайте...</p>
-          <img class="zakaz-container_oplata-img" src="img/cat.png" alt="">
+        <!-- box for hidden -->
+        <div class="zakaz-box">
+          <div class="zakaz-container_oplata">
+            <p class="zakaz-container_oplata-title">Спасибо за заказ !</p>
+            <p class="zakaz-container_oplata-desc">ожидайте...</p>
+            <img class="zakaz-container_oplata-img" src="img/cat.png" alt="">
+          </div>
+          <div class="zakaz-close">
+            <span class="zakaz-close_one"></span>
+            <span class="zakaz-close_two"></span>
+          </div>
+          <h2 class="zakaz-title">Ваш заказ</h2>
+
+          <ul class="zakaz-list">
+            <!-- заказ -->
+            <!-- <li class="zakaz-list__item">
+              <p class="zakaz-name">
+                <button class="zakaz-delete">x</button>
+                Свиная Биг
+              </p>
+              <p class="zakaz-price">300 р</p>
+            </li> -->
+          </ul>
+
+          <p class="zakaz-sum">
+            <span class="zakaz-sum__name">Итого</span>
+            <span class="zakaz-sum__price">3 000</span>
+          </p>
+
+          <button class="zakaz-button">заказать</button>
         </div>
-        <div class="zakaz-close">
-          <span class="zakaz-close_one"></span>
-          <span class="zakaz-close_two"></span>
-        </div>
-        <h2 class="zakaz-title">Ваш заказ</h2>
-
-        <ul class="zakaz-list">
-          <!-- заказ -->
-          <!-- <li class="zakaz-list__item">
-            <p class="zakaz-name">
-              <button class="zakaz-delete">x</button>
-              Свиная Биг
-            </p>
-            <p class="zakaz-price">300 р</p>
-          </li> -->
-        </ul>
-
-        <p class="zakaz-sum">
-          <span class="zakaz-sum__name">Итого</span>
-          <span class="zakaz-sum__price">3 000</span>
-        </p>
-
-        <button class="zakaz-button">заказать</button>
+        
       </div>
     </div>
 
     <!-- корзина открыть -->
     <button class="corzina">
-      <img class="corzina-img" src="img/basket.png">
+      <svg xmlns="http://www.w3.org/2000/svg" class="corzina-img" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+      </svg>
       <span class="corzina-text"></span>
     </button>
 

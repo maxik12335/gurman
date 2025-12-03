@@ -482,6 +482,7 @@ button:focus {
   min-height: 400px;
   max-height: 80vh;
   overflow-y: scroll;
+  overflow: hidden;
   box-shadow: 0 0 5px 0 rgb(255 255 255 / 20%);
   padding: 20px 140px;
   background-color: #000000a6;
@@ -602,6 +603,11 @@ button:focus {
 .corzina-img {
   height: 20px;
   margin-right: 10px;
+  fill: white;
+}
+
+.corzina:hover .corzina-img {
+  fill: #bd4932;
 }
 
 .zakaz-close {
