@@ -35,7 +35,7 @@
           <div class="zakaz-container_oplata">
             <p class="zakaz-container_oplata-title">Спасибо за заказ !</p>
             <p class="zakaz-container_oplata-desc">ожидайте...</p>
-            <img class="zakaz-container_oplata-img" src="img/cat.png" alt="">
+            <img class="zakaz-container_oplata-img" src="img/vkusno.png" alt="">
           </div>
           <div class="zakaz-close">
             <span class="zakaz-close_one"></span>
@@ -62,6 +62,18 @@
           <button class="zakaz-button">заказать</button>
         </div>
         
+      </div>
+    </div>
+
+    <!-- состав блюда -->
+    <div class="sostav">
+      <div class="sostav-container">
+        <div class="sostav-close">
+          <span class="sostav-close_one"></span>
+          <span class="sostav-close_two"></span>
+        </div>
+        <h3 class="sostav-title">qwewqe</h3>
+        <p class="sostav-description">qweqwe</p>
       </div>
     </div>
 
@@ -146,7 +158,10 @@
                   <p class="food-position-name">Свиная Биг</p>
                   <p class="food-price">300 р</p>
                 </div>
-                <button class="food-list-item-button" data-name="Свиная Биг" data-price="300">Добавить в заказ</button>
+                <div class="food-content-buttons">
+                  <button class="food-list-item-button" data-name="Свиная Биг" data-price="300">Добавить в заказ</button>
+                  <button class="food-item-sostav" data-sostav-name="Свиная Биг" data-sostav-description="Свинина, Лаваш, Помидоры черри, Огурец, Майонез, Укроп, Чеснок, Капуста пекинская, Сыр твердый">состав</button>
+                </div>
               </div>
               <img class="food-img" src="img/shaurma.jfif" alt="">
             </li>
@@ -695,6 +710,29 @@
       const zakazProducts = document.querySelector('.zakaz-list')
       var zakazList = []
           
+      const sostav = document.querySelector('.sostav')
+      const sostavButtons = document.querySelectorAll('.food-item-sostav')
+      const sostavCloseButton = document.querySelector('.sostav-close')
+      const sostavTitle = document.querySelector('.sostav-title')
+      const sostavDescription = document.querySelector('.sostav-description')
+
+      // открыть состав
+      sostavButtons.forEach(item =>{
+        item.addEventListener('click', () => {
+          sostav.classList.contains('sostav-open') ? '' : sostav.classList.add('sostav-open')
+          sostavTitle.textContent = item.getAttribute('data-sostav-name')
+          sostavDescription.textContent = item.getAttribute('data-sostav-description')
+          bodyNoScroll()
+        })
+      })
+
+      // закрыть состав
+      sostavCloseButton.addEventListener('click', () => {
+        sostav.classList.contains('sostav-open') ? sostav.classList.remove('sostav-open') : ''
+        bodyOnScroll()
+      })
+
+
 
       // // start
         openMenu()

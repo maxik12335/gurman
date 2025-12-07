@@ -379,6 +379,104 @@ button:focus {
   background-color: #bd49326c;
 }
 
+.food-content-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.food-item-sostav {
+  font-weight: 400;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px #00000066;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: 'Open Sans';
+  cursor: pointer;
+}
+
+.food-item-sostav:hover {
+  background-color: #80808026;
+}
+
+.sostav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00000073;
+  color: white;
+  z-index: 2;
+  display: none;
+}
+
+.sostav-open {
+  display: flex;
+}
+
+.sostav-container {
+  width: 800px;
+  min-height: fit-content;
+  height: 200px;
+  overflow: hidden;
+  box-shadow: 0 0 5px 0 rgb(255 255 255 / 20%);
+  padding: 20px 140px;
+  background-color: #000000a6;
+  border-radius: 4px;
+  position: relative;
+}
+
+.sostav-title {
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+.sostav-description{
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.sostav-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sostav-close:hover {
+  box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.5);
+}
+
+.sostav-close span {
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  display: block;
+}
+
+.sostav-close_one {
+  transform: rotate(45deg);
+}
+
+.sostav-close_two {
+  transform: rotate(-45deg);
+}
 
 .food-list-block {
   display: flex;
@@ -506,7 +604,7 @@ button:focus {
 }
 
 .zakaz-list {
-  height: 150px;
+  height: 200px;
   overflow-y: scroll;
 }
 
@@ -692,7 +790,7 @@ button:focus {
   }
 
   25% {
-    transform: rotate(-25deg);
+    transform: rotate(-15deg);
   }
 
   50% {
@@ -700,7 +798,7 @@ button:focus {
   }
 
   75% {
-    transform: rotate(25deg);
+    transform: rotate(15deg);
   }
 
   100% {
@@ -832,6 +930,11 @@ button:focus {
   .dostavka-title {
     text-align: right;
   }
+
+  .sostav-container {
+    width: 90%;
+    padding: 30px 40px;
+  }
 }
 
 @media (max-width: 540px) {
@@ -846,6 +949,15 @@ button:focus {
   .lanch-subtitle {
     text-align: center;
     font-size: 15px;
+  }
+
+  .zakaz-list {
+    max-height: 120px;
+    overflow-y: scroll;
+  }
+
+  .zakaz-sum {
+    margin-top: 30px;
   }
 
   .arrows {
@@ -916,7 +1028,7 @@ button:focus {
 
   .food-position-name {
     font-weight: 400;
-    font-size: 15px;
+    font-size: 17px;
     width: 100%;
   }
 
@@ -927,6 +1039,7 @@ button:focus {
 
   .zakaz-title {
     font-size: 35px;
+    margin-bottom: 30px;
   }
 
   .zakaz-container {
