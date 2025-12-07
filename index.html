@@ -145,7 +145,7 @@
         <h2 class="lanch-title">Бизнес ланч</h2>
         <h3 class="lanch-subtitle">Суп, салат, второе блюдо, чай, хлеб</h3>
         <p class="lacnh-text">24 часа</p>
-        <p class="lacnh-price">450 р</p>
+        <p class="lacnh-price" data-name="Бизнес ланч" data-price="450">450 р</p>
       </div>
       <ul class="food-list">
         <!-- шаурма -->
@@ -884,6 +884,18 @@
                   corzinaText.textContent = `заказ на ${getSumZakaz()} р`
                 })
               })
+
+              // бизнес ланч
+              const lanchButton = document.querySelector('.lacnh-price')
+              lanchButton.addEventListener('click', () => {
+                corzina.classList.contains('corzina-open') ? '' : corzina.classList.add('corzina-open')
+                const name = lanchButton.getAttribute('data-name')
+                const price = +lanchButton.getAttribute('data-price')
+
+                zakazList.push([name, price])
+
+                corzinaText.textContent = `заказ на ${getSumZakaz()} р`
+              })
             }
         
       // ==============================================================================================================
@@ -925,7 +937,7 @@
                 sum += item[1]
               })
               
-              document.querySelector('.zakaz-sum__price').textContent = sum
+              document.querySelector('.zakaz-sum__price').textContent = sum + " р"
             }
 
           // прокрутка страницы запретить
